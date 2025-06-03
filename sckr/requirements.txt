@@ -1,0 +1,122 @@
+# requirements.txt
+# Comprehensive OSV Discovery System - All Dependencies
+# Enhanced version for integrated system with Supabase and advanced features
+
+# Core HTTP and web scraping
+requests>=2.31.0
+aiohttp>=3.9.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+urllib3>=2.0.0
+selenium>=4.15.0  # For dynamic content if needed
+
+# Data processing and analysis
+pandas>=2.1.0
+numpy>=1.24.0
+
+# Database and Supabase
+supabase>=2.0.0
+postgrest>=0.13.0
+realtime>=1.0.0
+storage3>=0.7.0
+
+# Document processing
+PyMuPDF>=1.23.0  # fitz for PDF processing
+python-docx>=1.1.0
+openpyxl>=3.1.0
+xlsxwriter>=3.1.0
+pdfplumber>=0.9.0
+
+# Image processing and computer vision
+Pillow>=10.0.0
+opencv-python>=4.8.0  # For advanced image processing
+pytesseract>=0.3.10  # OCR for text extraction from images
+
+# Configuration management
+pyyaml>=6.0.0
+python-dotenv>=1.0.0
+configparser>=6.0.0
+
+# Async processing and concurrency
+asyncio>=3.4.3
+asyncpg>=0.29.0  # Async PostgreSQL driver
+aiofiles>=23.2.1
+
+# Web framework and API
+fastapi>=0.104.0
+uvicorn>=0.24.0
+websockets>=12.0
+
+# Real-time monitoring and progress tracking
+flask>=2.3.0
+flask-socketio>=5.3.0
+flask-cors>=4.0.0
+python-socketio>=5.8.0
+
+# System monitoring and performance
+psutil>=5.9.0
+memory-profiler>=0.61.0
+
+# Task scheduling and background jobs
+celery>=5.3.0
+redis>=5.0.0
+schedule>=1.2.0
+
+# Data validation and serialization
+pydantic>=2.5.0
+jsonschema>=4.17.0
+marshmallow>=3.20.0
+
+# Logging and monitoring
+loguru>=0.7.2
+prometheus-client>=0.19.0
+colorama>=0.4.6
+tqdm>=4.65.0
+
+# HTTP caching and optimization
+requests-cache>=1.1.0
+cachetools>=5.3.0
+
+# Text processing and NLP (for specification extraction)
+spacy>=3.7.0
+nltk>=3.8.0
+textdistance>=4.6.0
+
+# File handling and compression
+zipfile38>=0.0.3
+py7zr>=0.21.0
+
+# Testing and development
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+black>=23.7.0
+flake8>=6.0.0
+mypy>=1.7.0
+
+# Data visualization (optional but useful for dashboards)
+plotly>=5.17.0
+matplotlib>=3.7.0
+seaborn>=0.13.0
+
+# Geospatial data (for vessel tracking)
+geopandas>=0.14.0
+shapely>=2.0.0
+
+# Time series data (for performance tracking)
+pytz>=2023.3
+dateutil>=2.8.2
+
+# Security and encryption
+cryptography>=41.0.0
+bcrypt>=4.1.0
+
+# Environment and deployment
+docker>=6.1.0
+kubernetes>=28.1.0
+
+# Additional specialized libraries
+user-agents>=2.2.0  # For varied user agent strings
+fake-useragent>=1.4.0
+retrying>=1.3.4
+tenacity>=8.2.0  # Advanced retry logic
