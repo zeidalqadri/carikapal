@@ -1,0 +1,21 @@
+2025-06-03 17:32:04,777 [INFO] integrated_osv_system: 🚀 Integrated OSV System Starting...
+/app/enhanced_cli_dashboard.py:985: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @dashboard.app.on_event("startup")
+🖥️  Starting Enhanced CLI-Style OSV Discovery Dashboard...
+📟 Integrated terminal interface available at: http://localhost:8000
+INFO:     Started server process [182]
+INFO:     Waiting for application startup.
+🚀 Enhanced OSV CLI Dashboard starting up...
+✅ Enhanced dashboard ready at http://localhost:8000
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:47528 - "GET / HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [182]
