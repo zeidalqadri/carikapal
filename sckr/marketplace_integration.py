@@ -619,5 +619,4 @@ async def main():
         print(f"❌ Integration test failed: {e}")
 
 if __name__ == "__main__":
-    import re
     asyncio.run(main())
