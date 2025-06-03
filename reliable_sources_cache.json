@@ -1,14 +1,14 @@
 {
   "Maritime Connector": {
-    "attempts": 25,
+    "attempts": 30,
     "successes": 0,
-    "avg_response_time": 0.017265037343157985,
+    "avg_response_time": 0.23341850798717556,
     "success_rate": 0.0
   },
   "ShipSpotting": {
-    "attempts": 25,
+    "attempts": 30,
     "successes": 0,
-    "avg_response_time": 0.08695018160233303,
+    "avg_response_time": 0.14037200431894803,
     "success_rate": 0.0
   }
 }
