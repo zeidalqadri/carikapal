@@ -1,0 +1,750 @@
+2025-06-03 16:35:45,145 [INFO] integrated_osv_system: 🚀 Integrated OSV System Starting...
+2025-06-03 16:35:51,317 [INFO] integrated_osv_system: 🔧 Initializing all system components...
+2025-06-03 16:35:51,318 [INFO] integrated_osv_system: 📊 Initializing database manager...
+2025-06-03 16:35:51,617 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels?select=id&limit=1 "HTTP/2 200 OK"
+2025-06-03 16:35:51,620 [INFO] sckr.mosva_vessel_discovery: ✅ Supabase connection established
+2025-06-03 16:35:51,621 [INFO] integrated_osv_system: 🚢 Initializing vessel discovery system...
+2025-06-03 16:35:51,621 [INFO] sckr.complete_osv_system: 🚀 OSV Discovery System initialized - Log: /app/logs/osv_discovery_20250603_163551.log
+2025-06-03 16:35:51,621 [INFO] sckr.complete_osv_system: 🔧 Initializing system components...
+2025-06-03 16:35:51,861 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels?select=id&limit=1 "HTTP/2 200 OK"
+2025-06-03 16:35:51,862 [INFO] mosva_vessel_discovery: ✅ Supabase connection established
+2025-06-03 16:35:51,862 [INFO] sckr.complete_osv_system: ✅ Supabase connected
+2025-06-03 16:35:51,864 [ERROR] sckr.complete_osv_system: ❌ System initialization failed: asdict() should be called on dataclass instances
+2025-06-03 16:35:51,864 [INFO] integrated_osv_system: 📸 Initializing media collector...
+2025-06-03 16:35:51,864 [INFO] integrated_osv_system: 🔍 Initializing IMO search engine...
+2025-06-03 16:35:51,864 [INFO] integrated_osv_system: 🏪 Initializing marketplace integration...
+2025-06-03 16:35:51,895 [INFO] sckr.marketplace_integration: 🔧 Initializing marketplace integration manager...
+2025-06-03 16:35:52,109 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels?select=id%2Cdata_quality_score%2Cavailability_status "HTTP/2 400 Bad Request"
+2025-06-03 16:35:52,110 [ERROR] sckr.marketplace_integration: Failed to get marketplace stats: {'message': 'column vessels.data_quality_score does not exist', 'code': '42703', 'hint': None, 'details': None}
+2025-06-03 16:35:52,110 [INFO] sckr.marketplace_integration: ✅ Marketplace integration manager initialized
+2025-06-03 16:35:52,110 [INFO] integrated_osv_system: 📊 Initializing real-time dashboard...
+2025-06-03 16:35:52,151 [INFO] integrated_osv_system: 📄 Initializing specification parser...
+2025-06-03 16:35:52,151 [INFO] integrated_osv_system: ✅ All system components initialized successfully
+2025-06-03 16:35:56,904 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels?select=id "HTTP/2 200 OK"
+2025-06-03 16:35:57,028 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies?select=id "HTTP/2 404 Not Found"
+2025-06-03 16:36:25,725 [INFO] integrated_osv_system: 🌊 Starting comprehensive OSV discovery process...
+2025-06-03 16:36:25,725 [INFO] integrated_osv_system: 📋 Phase 1: Core vessel discovery
+2025-06-03 16:36:25,725 [INFO] sckr.complete_osv_system: 📋 Phase 1: Basic vessel discovery from MOSVA data
+2025-06-03 16:36:25,725 [INFO] mosva_vessel_discovery: 🚀 Starting MOSVA vessel discovery
+2025-06-03 16:36:25,726 [INFO] mosva_vessel_discovery: Parsed 47 companies from MOSVA data
+2025-06-03 16:36:25,726 [INFO] mosva_vessel_discovery: 📋 Found 47 companies
+2025-06-03 16:36:25,726 [INFO] mosva_vessel_discovery: 🏢 Processing: Ajang Shipping Sdn Bhd
+2025-06-03 16:36:25,945 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:36:25,945 [ERROR] mosva_vessel_discovery: Database error for Ajang Shipping Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:36:25,945 [INFO] mosva_vessel_discovery: Manual search needed for: Ajang Shipping Sdn Bhd
+2025-06-03 16:36:25,945 [WARNING] mosva_vessel_discovery: ⚠️ No working website found for Ajang Shipping Sdn Bhd
+2025-06-03 16:36:25,945 [INFO] mosva_vessel_discovery: 🏢 Processing: Alam Maritim (M) Sdn Bhd
+2025-06-03 16:36:26,076 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:36:26,077 [ERROR] mosva_vessel_discovery: Database error for Alam Maritim (M) Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:36:30,152 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.alam-maritim.com.my/
+2025-06-03 16:36:32,046 [INFO] mosva_vessel_discovery: 🚢 Found 9 vessel pages
+2025-06-03 16:36:33,333 [INFO] mosva_vessel_discovery: 📊 Extracted 3 vessels from https://www.alam-maritim.com.my/multi-purpose-support-vessel/
+2025-06-03 16:36:34,159 [INFO] mosva_vessel_discovery: 📊 Extracted 5 vessels from https://www.alam-maritim.com.my/anchor-handling-tug-supply/
+2025-06-03 16:36:34,978 [INFO] mosva_vessel_discovery: 📊 Extracted 3 vessels from https://www.alam-maritim.com.my/crew-utility-vessels/
+2025-06-03 16:36:35,779 [INFO] mosva_vessel_discovery: 📊 Extracted 3 vessels from https://www.alam-maritim.com.my/offshore-marine/
+2025-06-03 16:36:41,904 [INFO] mosva_vessel_discovery: 📊 Extracted 7 vessels from https://www.alam-maritim.com.my/tug-platform-support-vessel/
+2025-06-03 16:36:46,820 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from https://www.alam-maritim.com.my/integrated-logistic-ancillary-services/
+2025-06-03 16:36:47,652 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from https://www.alam-maritim.com.my/offshore-vacancy/
+2025-06-03 16:36:51,952 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from https://www.alam-maritim.com.my/offshore-pipelay-installation/
+2025-06-03 16:36:56,713 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from https://www.alam-maritim.com.my/offshore-construction-subsea-engineering-underwater-services/
+2025-06-03 16:36:56,936 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:56,937 [ERROR] mosva_vessel_discovery: Database error for M V SETIA ULUNG: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:56,937 [INFO] mosva_vessel_discovery: ✅ Processed vessel: M V SETIA ULUNG
+2025-06-03 16:36:57,053 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,053 [ERROR] mosva_vessel_discovery: Database error for Class: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,053 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Class
+2025-06-03 16:36:57,154 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,157 [ERROR] mosva_vessel_discovery: Database error for operator and manager for third party offshore support vessels in Asian countries: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,157 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operator and manager for third party offshore support vessels in Asian countries
+2025-06-03 16:36:57,267 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,268 [ERROR] mosva_vessel_discovery: Database error for M V SETIA HEBAT: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,268 [INFO] mosva_vessel_discovery: ✅ Processed vessel: M V SETIA HEBAT
+2025-06-03 16:36:57,337 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,338 [ERROR] mosva_vessel_discovery: Database error for Class: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,338 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Class
+2025-06-03 16:36:57,479 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,480 [ERROR] mosva_vessel_discovery: Database error for M V SETIA TEGUH: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,480 [INFO] mosva_vessel_discovery: ✅ Processed vessel: M V SETIA TEGUH
+2025-06-03 16:36:57,549 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,550 [ERROR] mosva_vessel_discovery: Database error for Class: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,550 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Class
+2025-06-03 16:36:57,615 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,616 [ERROR] mosva_vessel_discovery: Database error for operator and manager for third party offshore support vessels in Asian countries: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,616 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operator and manager for third party offshore support vessels in Asian countries
+2025-06-03 16:36:57,731 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,731 [ERROR] mosva_vessel_discovery: Database error for MV SETIA DERAS: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,731 [INFO] mosva_vessel_discovery: ✅ Processed vessel: MV SETIA DERAS
+2025-06-03 16:36:57,808 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,809 [ERROR] mosva_vessel_discovery: Database error for Class: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,809 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Class
+2025-06-03 16:36:57,917 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:57,918 [ERROR] mosva_vessel_discovery: Database error for operator and manager for third party offshore support vessels in Asian countries: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:57,918 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operator and manager for third party offshore support vessels in Asian countries
+2025-06-03 16:36:58,037 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,038 [ERROR] mosva_vessel_discovery: Database error for managing and chartering services to the companies within ALAM MARITIM GROUP or third parties involved in oil and gas industry: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,038 [INFO] mosva_vessel_discovery: ✅ Processed vessel: managing and chartering services to the companies within ALAM MARITIM GROUP or third parties involved in oil and gas industry
+2025-06-03 16:36:58,097 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,097 [ERROR] mosva_vessel_discovery: Database error for management and consultancy services in oil and gas industry: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,098 [INFO] mosva_vessel_discovery: ✅ Processed vessel: management and consultancy services in oil and gas industry
+2025-06-03 16:36:58,170 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,171 [ERROR] mosva_vessel_discovery: Database error for operator and manager for third party offshore support vessels in Asian countries: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,171 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operator and manager for third party offshore support vessels in Asian countries
+2025-06-03 16:36:58,231 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,232 [ERROR] mosva_vessel_discovery: Database error for M V SETIA GIGIH: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,232 [INFO] mosva_vessel_discovery: ✅ Processed vessel: M V SETIA GIGIH
+2025-06-03 16:36:58,350 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,351 [ERROR] mosva_vessel_discovery: Database error for Class: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,351 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Class
+2025-06-03 16:36:58,481 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,482 [ERROR] mosva_vessel_discovery: Database error for M V SETIA KENTAL: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,482 [INFO] mosva_vessel_discovery: ✅ Processed vessel: M V SETIA KENTAL
+2025-06-03 16:36:58,601 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,602 [ERROR] mosva_vessel_discovery: Database error for Class: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,602 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Class
+2025-06-03 16:36:58,662 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,662 [ERROR] mosva_vessel_discovery: Database error for M V SETIA ZAMAN: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,662 [INFO] mosva_vessel_discovery: ✅ Processed vessel: M V SETIA ZAMAN
+2025-06-03 16:36:58,772 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,772 [ERROR] mosva_vessel_discovery: Database error for Class: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,772 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Class
+2025-06-03 16:36:58,885 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,886 [ERROR] mosva_vessel_discovery: Database error for operator and manager for third party offshore support vessels in Asian countries: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,886 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operator and manager for third party offshore support vessels in Asian countries
+2025-06-03 16:36:58,946 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:58,947 [ERROR] mosva_vessel_discovery: Database error for operator and manager for third party offshore support vessels in Asian countries: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:58,947 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operator and manager for third party offshore support vessels in Asian countries
+2025-06-03 16:36:59,007 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:59,008 [ERROR] mosva_vessel_discovery: Database error for operator and manager for third party offshore support vessels in Asian countries: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:59,008 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operator and manager for third party offshore support vessels in Asian countries
+2025-06-03 16:36:59,146 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:59,146 [ERROR] mosva_vessel_discovery: Database error for operator and manager for third party offshore support vessels in Asian countries: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:59,146 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operator and manager for third party offshore support vessels in Asian countries
+2025-06-03 16:36:59,302 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:36:59,302 [ERROR] mosva_vessel_discovery: Database error for operator and manager for third party offshore support vessels in Asian countries: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:36:59,302 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operator and manager for third party offshore support vessels in Asian countries
+2025-06-03 16:36:59,302 [INFO] mosva_vessel_discovery: 🏢 Processing: Centus Marine Sdn Bhd
+2025-06-03 16:36:59,361 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:36:59,362 [ERROR] mosva_vessel_discovery: Database error for Centus Marine Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:37:02,098 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.centusmarine.com/
+2025-06-03 16:37:04,564 [INFO] mosva_vessel_discovery: 🚢 Found 4 vessel pages
+2025-06-03 16:37:07,094 [INFO] mosva_vessel_discovery: 📊 Extracted 0 vessels from http://www.centusmarine.com/
+2025-06-03 16:37:08,019 [INFO] mosva_vessel_discovery: 📊 Extracted 0 vessels from https://centusmarine.com/general-purpose-vessel-gpv/
+2025-06-03 16:37:09,026 [INFO] mosva_vessel_discovery: 📊 Extracted 0 vessels from https://centusmarine.com/fast-crew-boat-fcb/
+2025-06-03 16:37:09,924 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from https://centusmarine.com/services/
+2025-06-03 16:37:10,120 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:10,121 [ERROR] mosva_vessel_discovery: Database error for Manager: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:10,121 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Manager
+2025-06-03 16:37:10,121 [INFO] mosva_vessel_discovery: 🏢 Processing: Classic Marine & Services (M) Sdn Bhd
+2025-06-03 16:37:10,242 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:37:10,242 [ERROR] mosva_vessel_discovery: Database error for Classic Marine & Services (M) Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:37:13,454 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.classicmarine.com.my/
+2025-06-03 16:37:15,973 [INFO] mosva_vessel_discovery: 🚢 Found 1 vessel pages
+2025-06-03 16:37:17,886 [INFO] mosva_vessel_discovery: 📊 Extracted 3 vessels from https://classicmarine.com.my/m/fleet/
+2025-06-03 16:37:18,136 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:18,136 [ERROR] mosva_vessel_discovery: Database error for Type: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:18,136 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Type
+2025-06-03 16:37:18,272 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:18,273 [ERROR] mosva_vessel_discovery: Database error for Name: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:18,273 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Name
+2025-06-03 16:37:18,389 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:18,390 [ERROR] mosva_vessel_discovery: Database error for GALLERY: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:18,390 [INFO] mosva_vessel_discovery: ✅ Processed vessel: GALLERY
+2025-06-03 16:37:18,390 [INFO] mosva_vessel_discovery: 🏢 Processing: DESB Marine Services Sdn Bhd
+2025-06-03 16:37:18,522 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:37:18,523 [ERROR] mosva_vessel_discovery: Database error for DESB Marine Services Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:37:19,324 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.desb.net/
+2025-06-03 16:37:20,343 [INFO] mosva_vessel_discovery: 🚢 Found 4 vessel pages
+2025-06-03 16:37:21,333 [INFO] mosva_vessel_discovery: 📊 Extracted 9 vessels from http://www.desb.net/
+2025-06-03 16:37:21,667 [INFO] mosva_vessel_discovery: 📊 Extracted 8 vessels from http://www.desb.net/vessel_spec.php
+2025-06-03 16:37:21,997 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from http://www.desb.net/provision.php
+2025-06-03 16:37:22,336 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from http://www.desb.net/marine_vessel.php
+2025-06-03 16:37:22,473 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:22,473 [ERROR] mosva_vessel_discovery: Database error for Technical Specification: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:22,473 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Technical Specification
+2025-06-03 16:37:22,538 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:22,539 [ERROR] mosva_vessel_discovery: Database error for Technical Specification: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:22,539 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Technical Specification
+2025-06-03 16:37:22,645 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:22,646 [ERROR] mosva_vessel_discovery: Database error for Gallery: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:22,646 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Gallery
+2025-06-03 16:37:22,785 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:22,786 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:22,786 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:22,842 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:22,843 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:22,843 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:22,911 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:22,911 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:22,911 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:23,055 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,056 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,056 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:23,115 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,115 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,116 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:23,237 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,239 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,240 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:23,373 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,374 [ERROR] mosva_vessel_discovery: Database error for Technical Specification: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,374 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Technical Specification
+2025-06-03 16:37:23,438 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,439 [ERROR] mosva_vessel_discovery: Database error for Technical Specification: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,439 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Technical Specification
+2025-06-03 16:37:23,573 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,574 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,574 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:23,626 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,627 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,627 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:23,758 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,758 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,758 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:23,818 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,819 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,819 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:23,887 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,888 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,888 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:23,995 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:23,995 [ERROR] mosva_vessel_discovery: Database error for View: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:23,996 [INFO] mosva_vessel_discovery: ✅ Processed vessel: View
+2025-06-03 16:37:24,144 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:24,145 [ERROR] mosva_vessel_discovery: Database error for Technical Specification: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:24,145 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Technical Specification
+2025-06-03 16:37:24,266 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:24,267 [ERROR] mosva_vessel_discovery: Database error for Year Delivered: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:24,267 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Year Delivered
+2025-06-03 16:37:24,267 [INFO] mosva_vessel_discovery: 🏢 Processing: Dinastia Jati Sdn Bhd
+2025-06-03 16:37:24,334 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:37:24,335 [ERROR] mosva_vessel_discovery: Database error for Dinastia Jati Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:37:27,705 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.dinastiajati.com/
+2025-06-03 16:37:33,964 [WARNING] mosva_vessel_discovery: ⚠️ No vessel pages found for Dinastia Jati Sdn Bhd
+2025-06-03 16:37:33,964 [INFO] mosva_vessel_discovery: 🏢 Processing: E.A. Technique (M) Bhd
+2025-06-03 16:37:34,125 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:37:34,126 [ERROR] mosva_vessel_discovery: Database error for E.A. Technique (M) Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:37:35,465 [INFO] mosva_vessel_discovery: Manual search needed for: E.A. Technique (M) Bhd
+2025-06-03 16:37:35,465 [WARNING] mosva_vessel_discovery: ⚠️ No working website found for E.A. Technique (M) Bhd
+2025-06-03 16:37:35,465 [INFO] mosva_vessel_discovery: 🏢 Processing: Grade One Marine Shipyard Sdn Bhd
+2025-06-03 16:37:35,600 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:37:35,600 [ERROR] mosva_vessel_discovery: Database error for Grade One Marine Shipyard Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:37:35,904 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.gradeonemarineshipyard.wordpress.com/
+2025-06-03 16:37:36,142 [INFO] mosva_vessel_discovery: 🚢 Found 3 vessel pages
+2025-06-03 16:37:36,282 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from https://gradeonemarineshipyard.wordpress.com/services/
+2025-06-03 16:37:36,341 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from https://gradeonemarineshipyard.wordpress.com
+2025-06-03 16:37:36,612 [INFO] mosva_vessel_discovery: 📊 Extracted 2 vessels from https://gradeonemarineshipyard.wordpress.com/services/shipbuilding/rmntrainingvessel/
+2025-06-03 16:37:36,743 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:36,743 [ERROR] mosva_vessel_discovery: Database error for Archive: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:36,743 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Archive
+2025-06-03 16:37:36,853 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:36,854 [ERROR] mosva_vessel_discovery: Database error for Archive: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:36,854 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Archive
+2025-06-03 16:37:36,973 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:36,973 [ERROR] mosva_vessel_discovery: Database error for Archive: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:36,973 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Archive
+2025-06-03 16:37:37,103 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:37,104 [ERROR] mosva_vessel_discovery: Database error for KD GAGAH SAMUDERA: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:37,104 [INFO] mosva_vessel_discovery: ✅ Processed vessel: KD GAGAH SAMUDERA
+2025-06-03 16:37:37,104 [INFO] mosva_vessel_discovery: 🏢 Processing: Icon Offshore Berhad
+2025-06-03 16:37:37,179 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:37:37,179 [ERROR] mosva_vessel_discovery: Database error for Icon Offshore Berhad: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:37:39,504 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.iconoffshore.com.my/
+2025-06-03 16:37:41,952 [INFO] mosva_vessel_discovery: 🚢 Found 10 vessel pages
+2025-06-03 16:37:42,869 [INFO] mosva_vessel_discovery: 📊 Extracted 7 vessels from https://lianson.com/health-safety-environmental-policies/
+2025-06-03 16:37:43,240 [INFO] mosva_vessel_discovery: 📊 Extracted 4 vessels from https://lianson.com/tugs-barges/
+2025-06-03 16:37:43,549 [INFO] mosva_vessel_discovery: 📊 Extracted 4 vessels from https://lianson.com/offshore-support-vessel-services/#our-offshore-vessels
+2025-06-03 16:37:43,835 [INFO] mosva_vessel_discovery: 📊 Extracted 4 vessels from https://lianson.com/offshore-support-vessel-services/#marine-transportation
+2025-06-03 16:37:44,131 [INFO] mosva_vessel_discovery: 📊 Extracted 7 vessels from https://lianson.com/health-safety-environmental-policies/#icon-ship-management-sdn-bhd-HSSE-policies
+2025-06-03 16:37:46,227 [INFO] mosva_vessel_discovery: 📊 Extracted 8 vessels from http://www.iconoffshore.com.my/
+2025-06-03 16:37:46,512 [INFO] mosva_vessel_discovery: 📊 Extracted 4 vessels from https://lianson.com/service-provider-code-of-conduct/
+2025-06-03 16:37:47,785 [INFO] mosva_vessel_discovery: 📊 Extracted 0 vessels from https://lianson.com/wp-content/uploads/2025/03/LFG-Board-Charter.pdf
+2025-06-03 16:37:48,075 [INFO] mosva_vessel_discovery: 📊 Extracted 4 vessels from https://lianson.com/offshore-support-vessel-services/#well-services
+2025-06-03 16:37:48,366 [INFO] mosva_vessel_discovery: 📊 Extracted 7 vessels from https://lianson.com/health-safety-environmental-policies/#icon-offshore-berhad-QHSSE-policies
+2025-06-03 16:37:48,573 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:48,574 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:48,574 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:48,736 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:48,736 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:48,736 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:48,856 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:48,857 [ERROR] mosva_vessel_discovery: Database error for operation and a safe working environment: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:48,857 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operation and a safe working environment
+2025-06-03 16:37:49,010 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,011 [ERROR] mosva_vessel_discovery: Database error for or the environment by transmittal of pertinent documentation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,011 [INFO] mosva_vessel_discovery: ✅ Processed vessel: or the environment by transmittal of pertinent documentation
+2025-06-03 16:37:49,084 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,085 [ERROR] mosva_vessel_discovery: Database error for types and trade: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,085 [INFO] mosva_vessel_discovery: ✅ Processed vessel: types and trade
+2025-06-03 16:37:49,204 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,204 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,205 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:49,385 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,386 [ERROR] mosva_vessel_discovery: Database error for Overview: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,386 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Overview
+2025-06-03 16:37:49,473 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,474 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,474 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:49,598 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,599 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,599 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:49,724 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,725 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,725 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:49,850 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,851 [ERROR] mosva_vessel_discovery: Database error for Overview: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,851 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Overview
+2025-06-03 16:37:49,910 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,910 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,910 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:49,982 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:49,983 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:49,983 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:50,111 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:50,112 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:50,112 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:50,283 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:50,283 [ERROR] mosva_vessel_discovery: Database error for Overview: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:50,283 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Overview
+2025-06-03 16:37:50,423 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:50,424 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:50,424 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:50,496 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:50,497 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:50,497 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:50,572 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:50,572 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:50,572 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:50,722 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:50,723 [ERROR] mosva_vessel_discovery: Database error for Overview: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:50,723 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Overview
+2025-06-03 16:37:50,801 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:50,802 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:50,802 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:50,873 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:50,874 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:50,874 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:51,027 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,027 [ERROR] mosva_vessel_discovery: Database error for operation and a safe working environment: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,028 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operation and a safe working environment
+2025-06-03 16:37:51,091 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,091 [ERROR] mosva_vessel_discovery: Database error for or the environment by transmittal of pertinent documentation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,091 [INFO] mosva_vessel_discovery: ✅ Processed vessel: or the environment by transmittal of pertinent documentation
+2025-06-03 16:37:51,242 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,243 [ERROR] mosva_vessel_discovery: Database error for types and trade: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,243 [INFO] mosva_vessel_discovery: ✅ Processed vessel: types and trade
+2025-06-03 16:37:51,386 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,387 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,387 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:51,536 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,537 [ERROR] mosva_vessel_discovery: Database error for Overview: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,537 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Overview
+2025-06-03 16:37:51,599 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,599 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,599 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:51,724 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,724 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,724 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:51,804 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,805 [ERROR] mosva_vessel_discovery: Database error for Membership in Association: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,805 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Membership in Association
+2025-06-03 16:37:51,870 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,871 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,871 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:51,951 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:51,951 [ERROR] mosva_vessel_discovery: Database error for Operations: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:51,952 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Operations
+2025-06-03 16:37:52,097 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,098 [ERROR] mosva_vessel_discovery: Database error for Management Sdn Bhd HSSE Policies: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,098 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management Sdn Bhd HSSE Policies
+2025-06-03 16:37:52,182 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,182 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,183 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:52,260 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,260 [ERROR] mosva_vessel_discovery: Database error for Overview: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,260 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Overview
+2025-06-03 16:37:52,324 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,324 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,325 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:52,395 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,396 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,396 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:52,467 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,468 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,468 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:52,539 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,540 [ERROR] mosva_vessel_discovery: Database error for Overview: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,540 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Overview
+2025-06-03 16:37:52,617 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,618 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,618 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:52,763 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,764 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,764 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:52,829 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,830 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,830 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:52,910 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,911 [ERROR] mosva_vessel_discovery: Database error for Overview: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,911 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Overview
+2025-06-03 16:37:52,979 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:52,980 [ERROR] mosva_vessel_discovery: Database error for Board of Directors: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:52,980 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Board of Directors
+2025-06-03 16:37:53,063 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:53,064 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:53,064 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:53,123 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:53,123 [ERROR] mosva_vessel_discovery: Database error for operation and a safe working environment: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:53,123 [INFO] mosva_vessel_discovery: ✅ Processed vessel: operation and a safe working environment
+2025-06-03 16:37:53,202 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:53,202 [ERROR] mosva_vessel_discovery: Database error for or the environment by transmittal of pertinent documentation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:53,203 [INFO] mosva_vessel_discovery: ✅ Processed vessel: or the environment by transmittal of pertinent documentation
+2025-06-03 16:37:53,277 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:53,277 [ERROR] mosva_vessel_discovery: Database error for types and trade: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:53,278 [INFO] mosva_vessel_discovery: ✅ Processed vessel: types and trade
+2025-06-03 16:37:53,349 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:53,350 [ERROR] mosva_vessel_discovery: Database error for Marine Transportation: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:53,350 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Marine Transportation
+2025-06-03 16:37:53,497 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:37:53,497 [ERROR] mosva_vessel_discovery: Database error for Overview: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:37:53,497 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Overview
+2025-06-03 16:37:53,497 [INFO] mosva_vessel_discovery: 🏢 Processing: Jasa Merin (Malaysia) Sdn Bhd
+2025-06-03 16:37:53,656 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:37:53,656 [ERROR] mosva_vessel_discovery: Database error for Jasa Merin (Malaysia) Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:37:55,009 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.jasamerin.com.my/
+2025-06-03 16:37:56,439 [INFO] mosva_vessel_discovery: 🚢 Found 3 vessel pages
+2025-06-03 16:37:57,854 [INFO] mosva_vessel_discovery: 📊 Extracted 5 vessels from http://www.jasamerin.com.my/
+2025-06-03 16:37:58,796 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from https://www.marine-general.com.my/
+2025-06-03 16:38:00,393 [INFO] mosva_vessel_discovery: 📊 Extracted 22 vessels from http://www.jasamerin.com.my/fleets.php
+2025-06-03 16:38:00,516 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:00,516 [ERROR] mosva_vessel_discovery: Database error for and considerate: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:00,516 [INFO] mosva_vessel_discovery: ✅ Processed vessel: and considerate
+2025-06-03 16:38:00,640 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:00,641 [ERROR] mosva_vessel_discovery: Database error for Management and Self Assessment: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:00,641 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management and Self Assessment
+2025-06-03 16:38:00,700 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:00,701 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:00,701 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:00,777 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:00,777 [ERROR] mosva_vessel_discovery: Database error for management functions for the Downstream: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:00,777 [INFO] mosva_vessel_discovery: ✅ Processed vessel: management functions for the Downstream
+2025-06-03 16:38:00,847 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:00,848 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:00,848 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:00,915 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:00,916 [ERROR] mosva_vessel_discovery: Database error for Programme: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:00,916 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Programme
+2025-06-03 16:38:00,982 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:00,982 [ERROR] mosva_vessel_discovery: Database error for JM CEKAL: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:00,982 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM CEKAL
+2025-06-03 16:38:01,045 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,046 [ERROR] mosva_vessel_discovery: Database error for JM TABAH: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,046 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM TABAH
+2025-06-03 16:38:01,127 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,129 [ERROR] mosva_vessel_discovery: Database error for JM ABADI: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,129 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM ABADI
+2025-06-03 16:38:01,281 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,281 [ERROR] mosva_vessel_discovery: Database error for JM GEMILANG: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,282 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM GEMILANG
+2025-06-03 16:38:01,346 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,346 [ERROR] mosva_vessel_discovery: Database error for JM CEMERLANG: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,347 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM CEMERLANG
+2025-06-03 16:38:01,422 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,423 [ERROR] mosva_vessel_discovery: Database error for JM SEPOI: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,424 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM SEPOI
+2025-06-03 16:38:01,571 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,571 [ERROR] mosva_vessel_discovery: Database error for JM SALAM: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,572 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM SALAM
+2025-06-03 16:38:01,653 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,653 [ERROR] mosva_vessel_discovery: Database error for JM SAMUDERA: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,653 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM SAMUDERA
+2025-06-03 16:38:01,728 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,729 [ERROR] mosva_vessel_discovery: Database error for JM SETIA: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,729 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM SETIA
+2025-06-03 16:38:01,854 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,854 [ERROR] mosva_vessel_discovery: Database error for JM EHSAN: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,854 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM EHSAN
+2025-06-03 16:38:01,923 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,924 [ERROR] mosva_vessel_discovery: Database error for JM PURNAMA: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,924 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM PURNAMA
+2025-06-03 16:38:01,993 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:01,993 [ERROR] mosva_vessel_discovery: Database error for JM PERKASA 2: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:01,993 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM PERKASA 2
+2025-06-03 16:38:02,060 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,060 [ERROR] mosva_vessel_discovery: Database error for JM BAYU: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,061 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM BAYU
+2025-06-03 16:38:02,118 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,119 [ERROR] mosva_vessel_discovery: Database error for JM PERMAI: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,119 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM PERMAI
+2025-06-03 16:38:02,190 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,191 [ERROR] mosva_vessel_discovery: Database error for JM GAGAH 2: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,191 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM GAGAH 2
+2025-06-03 16:38:02,251 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,252 [ERROR] mosva_vessel_discovery: Database error for JM INTAN: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,252 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM INTAN
+2025-06-03 16:38:02,320 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,321 [ERROR] mosva_vessel_discovery: Database error for JM TENANG: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,321 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM TENANG
+2025-06-03 16:38:02,398 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,399 [ERROR] mosva_vessel_discovery: Database error for JM HADHARI: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,399 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM HADHARI
+2025-06-03 16:38:02,468 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,469 [ERROR] mosva_vessel_discovery: Database error for JM SERI BESUT: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,469 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM SERI BESUT
+2025-06-03 16:38:02,637 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,638 [ERROR] mosva_vessel_discovery: Database error for JM INDAH: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,638 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM INDAH
+2025-06-03 16:38:02,709 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,710 [ERROR] mosva_vessel_discovery: Database error for JM MURNI: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,710 [INFO] mosva_vessel_discovery: ✅ Processed vessel: JM MURNI
+2025-06-03 16:38:02,787 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:02,788 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:02,788 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:02,788 [INFO] mosva_vessel_discovery: 🏢 Processing: JVC Mega Sdn Bhd
+2025-06-03 16:38:02,858 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:38:02,858 [ERROR] mosva_vessel_discovery: Database error for JVC Mega Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:38:02,858 [INFO] mosva_vessel_discovery: Manual search needed for: JVC Mega Sdn Bhd
+2025-06-03 16:38:02,858 [WARNING] mosva_vessel_discovery: ⚠️ No working website found for JVC Mega Sdn Bhd
+2025-06-03 16:38:02,858 [INFO] mosva_vessel_discovery: 🏢 Processing: Keyfield Offshore Sdn Bhd
+2025-06-03 16:38:02,930 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:38:02,931 [ERROR] mosva_vessel_discovery: Database error for Keyfield Offshore Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:38:04,976 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.keyfieldoffshore.com/
+2025-06-03 16:38:07,523 [INFO] mosva_vessel_discovery: 🚢 Found 3 vessel pages
+2025-06-03 16:38:09,549 [INFO] mosva_vessel_discovery: 📊 Extracted 25 vessels from https://keyfieldoffshore.com/our-vessels/
+2025-06-03 16:38:10,325 [INFO] mosva_vessel_discovery: 📊 Extracted 16 vessels from https://keyfieldoffshore.com/services/#vesselchartering
+2025-06-03 16:38:11,122 [INFO] mosva_vessel_discovery: 📊 Extracted 16 vessels from https://keyfieldoffshore.com/services/#catering
+2025-06-03 16:38:11,281 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,282 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,282 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:11,359 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,360 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,360 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:11,438 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,438 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,438 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:11,502 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,503 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,503 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:11,565 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,566 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,566 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:11,632 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,633 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,634 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:11,705 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,706 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,706 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:11,769 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,770 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,770 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:11,834 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,834 [ERROR] mosva_vessel_discovery: Database error for Laguna Setia 1Accommodation Work Boat: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,834 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Laguna Setia 1Accommodation Work Boat
+2025-06-03 16:38:11,900 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,900 [ERROR] mosva_vessel_discovery: Database error for Laguna Setia 2Accommodation Work Boat: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,900 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Laguna Setia 2Accommodation Work Boat
+2025-06-03 16:38:11,966 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:11,967 [ERROR] mosva_vessel_discovery: Database error for Keyfield LestariAccommodation Work Boat: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:11,967 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield LestariAccommodation Work Boat
+2025-06-03 16:38:12,041 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,042 [ERROR] mosva_vessel_discovery: Database error for Keyfield FalconDP2 Hybrid Accomodation Work Boat: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,042 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield FalconDP2 Hybrid Accomodation Work Boat
+2025-06-03 16:38:12,111 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,112 [ERROR] mosva_vessel_discovery: Database error for Keyfield GraceDP2 Accommodation Work Boat: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,112 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield GraceDP2 Accommodation Work Boat
+2025-06-03 16:38:12,177 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,177 [ERROR] mosva_vessel_discovery: Database error for Keyfield CompassionDP2 Accommodation Work Boat: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,177 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield CompassionDP2 Accommodation Work Boat
+2025-06-03 16:38:12,262 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,263 [ERROR] mosva_vessel_discovery: Database error for Keyfield CommanderDP2 Accommodation Work Boat: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,263 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield CommanderDP2 Accommodation Work Boat
+2025-06-03 16:38:12,342 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,343 [ERROR] mosva_vessel_discovery: Database error for Keyfield Amanah: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,343 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield Amanah
+2025-06-03 16:38:12,415 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,416 [ERROR] mosva_vessel_discovery: Database error for Keyfield Itqan: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,416 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield Itqan
+2025-06-03 16:38:12,483 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,484 [ERROR] mosva_vessel_discovery: Database error for Keyfield KindnessDP1 Anchor Handling Tug Supply: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,484 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield KindnessDP1 Anchor Handling Tug Supply
+2025-06-03 16:38:12,553 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,555 [ERROR] mosva_vessel_discovery: Database error for Keyfield AuliaDP1 Anchor Handling Tug Supply: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,555 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield AuliaDP1 Anchor Handling Tug Supply
+2025-06-03 16:38:12,621 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,622 [ERROR] mosva_vessel_discovery: Database error for Keyfield Helms 1DP2 Geotechnical Platform Supply Vessel: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,622 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield Helms 1DP2 Geotechnical Platform Supply Vessel
+2025-06-03 16:38:12,696 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,700 [ERROR] mosva_vessel_discovery: Database error for Keyfield GratitudeDP2 Platform Supply Vessel: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,700 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield GratitudeDP2 Platform Supply Vessel
+2025-06-03 16:38:12,766 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,766 [ERROR] mosva_vessel_discovery: Database error for Keyfield Helms: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,766 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Keyfield Helms
+2025-06-03 16:38:12,839 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,839 [ERROR] mosva_vessel_discovery: Database error for Daya Indah Satu: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,839 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Daya Indah Satu
+2025-06-03 16:38:12,909 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,910 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,910 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:12,983 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:12,984 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:12,984 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:13,042 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,045 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,045 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:13,198 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,199 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,199 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:13,258 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,260 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,260 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:13,334 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,336 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,336 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:13,395 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,396 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,396 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:13,472 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,473 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,473 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:13,541 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,542 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,542 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:13,603 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,606 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,606 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:13,672 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,673 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,673 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:13,746 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,747 [ERROR] mosva_vessel_discovery: Database error for Permata Arau 1: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,748 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Permata Arau 1
+2025-06-03 16:38:13,819 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,820 [ERROR] mosva_vessel_discovery: Database error for Service For PCSB: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,820 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Service For PCSB
+2025-06-03 16:38:13,883 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:13,883 [ERROR] mosva_vessel_discovery: Database error for Service For PCSB: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:13,883 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Service For PCSB
+2025-06-03 16:38:14,049 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,049 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,049 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:14,116 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,116 [ERROR] mosva_vessel_discovery: Database error for management services are in line with the requirements set by regulating authorities as well as Jabatan Laut Malaysia: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,116 [INFO] mosva_vessel_discovery: ✅ Processed vessel: management services are in line with the requirements set by regulating authorities as well as Jabatan Laut Malaysia
+2025-06-03 16:38:14,176 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,176 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,177 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:14,241 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,242 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,242 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:14,306 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,307 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,307 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:14,364 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,365 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,365 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:14,436 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,437 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,437 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:14,499 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,500 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,500 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:14,568 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,569 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,569 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:14,659 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,661 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,661 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:14,718 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,719 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,719 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:14,786 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,787 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,787 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:14,861 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,862 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,862 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:14,937 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,937 [ERROR] mosva_vessel_discovery: Database error for Permata Arau 1: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,937 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Permata Arau 1
+2025-06-03 16:38:14,995 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:14,996 [ERROR] mosva_vessel_discovery: Database error for Service For PCSB: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:14,996 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Service For PCSB
+2025-06-03 16:38:15,073 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:15,074 [ERROR] mosva_vessel_discovery: Database error for Service For PCSB: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:15,074 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Service For PCSB
+2025-06-03 16:38:15,138 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:15,139 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:15,139 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:15,230 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:15,231 [ERROR] mosva_vessel_discovery: Database error for management services are in line with the requirements set by regulating authorities as well as Jabatan Laut Malaysia: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:15,231 [INFO] mosva_vessel_discovery: ✅ Processed vessel: management services are in line with the requirements set by regulating authorities as well as Jabatan Laut Malaysia
+2025-06-03 16:38:15,301 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:15,302 [ERROR] mosva_vessel_discovery: Database error for Chartering: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:15,302 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Chartering
+2025-06-03 16:38:15,371 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:15,372 [ERROR] mosva_vessel_discovery: Database error for Management: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:15,372 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Management
+2025-06-03 16:38:15,372 [INFO] mosva_vessel_discovery: 🏢 Processing: Marine Creation Sdn Bhd
+2025-06-03 16:38:15,448 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:38:15,448 [ERROR] mosva_vessel_discovery: Database error for Marine Creation Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:38:15,839 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.marinecreation.com.my/
+2025-06-03 16:38:15,958 [INFO] mosva_vessel_discovery: 🚢 Found 4 vessel pages
+2025-06-03 16:38:16,264 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from http://www.marinecreation.com.my/chemical-tankers/
+2025-06-03 16:38:16,499 [INFO] mosva_vessel_discovery: 📊 Extracted 2 vessels from http://www.marinecreation.com.my/other-services/
+2025-06-03 16:38:16,760 [INFO] mosva_vessel_discovery: 📊 Extracted 0 vessels from http://www.marinecreation.com.my/our-services/
+2025-06-03 16:38:17,057 [INFO] mosva_vessel_discovery: 📊 Extracted 3 vessels from http://www.marinecreation.com.my/offshore-support-vessels/
+2025-06-03 16:38:17,124 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:17,125 [ERROR] mosva_vessel_discovery: Database error for chartering and broking services for Clean and Dirty: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:17,125 [INFO] mosva_vessel_discovery: ✅ Processed vessel: chartering and broking services for Clean and Dirty
+2025-06-03 16:38:17,187 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:17,188 [ERROR] mosva_vessel_discovery: Database error for brokeringMCSB: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:17,188 [INFO] mosva_vessel_discovery: ✅ Processed vessel: brokeringMCSB
+2025-06-03 16:38:17,260 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:17,261 [ERROR] mosva_vessel_discovery: Database error for managementWe provide technical ship management through our sister company GOF Offshore Sdn: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:17,262 [INFO] mosva_vessel_discovery: ✅ Processed vessel: managementWe provide technical ship management through our sister company GOF Offshore Sdn
+2025-06-03 16:38:17,322 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:17,322 [ERROR] mosva_vessel_discovery: Database error for Awarded 5 months FCB charter contract to support: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:17,322 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Awarded 5 months FCB charter contract to support
+2025-06-03 16:38:17,398 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:17,399 [ERROR] mosva_vessel_discovery: Database error for Awarded 9 months FCB charter contract to support: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:17,399 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Awarded 9 months FCB charter contract to support
+2025-06-03 16:38:17,477 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:17,478 [ERROR] mosva_vessel_discovery: Database error for Registered as an ordinary member of MOSVA: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:17,478 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Registered as an ordinary member of MOSVA
+2025-06-03 16:38:17,478 [INFO] mosva_vessel_discovery: 🏢 Processing: MK Bumimas Resources Sdn Bhd
+2025-06-03 16:38:17,546 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:38:17,547 [ERROR] mosva_vessel_discovery: Database error for MK Bumimas Resources Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:38:19,231 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.mkbumimas.com/
+2025-06-03 16:38:27,585 [WARNING] mosva_vessel_discovery: ⚠️ No vessel pages found for MK Bumimas Resources Sdn Bhd
+2025-06-03 16:38:27,585 [INFO] mosva_vessel_discovery: 🏢 Processing: Neopetro Sdn Bhd
+2025-06-03 16:38:27,752 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:38:27,752 [ERROR] mosva_vessel_discovery: Database error for Neopetro Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:38:28,921 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.neopetro.com.my/
+2025-06-03 16:38:30,198 [INFO] mosva_vessel_discovery: 🚢 Found 1 vessel pages
+2025-06-03 16:38:31,081 [INFO] mosva_vessel_discovery: 📊 Extracted 4 vessels from https://www.neopetro.com.my/our-services/
+2025-06-03 16:38:31,143 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:31,145 [ERROR] mosva_vessel_discovery: Database error for Anchor Handling Tug: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:31,145 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Anchor Handling Tug
+2025-06-03 16:38:31,247 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:31,247 [ERROR] mosva_vessel_discovery: Database error for Fast Crew Boat: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:31,247 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Fast Crew Boat
+2025-06-03 16:38:31,299 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:31,300 [ERROR] mosva_vessel_discovery: Database error for Edda Fortis: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:31,300 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Edda Fortis
+2025-06-03 16:38:31,424 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:31,425 [ERROR] mosva_vessel_discovery: Database error for PTSC Thai Binh: {'message': "Could not find the 'last_updated' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:31,425 [INFO] mosva_vessel_discovery: ✅ Processed vessel: PTSC Thai Binh
+2025-06-03 16:38:31,425 [INFO] mosva_vessel_discovery: 🏢 Processing: PBJV Group Sdn Bhd
+2025-06-03 16:38:31,534 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:38:31,535 [ERROR] mosva_vessel_discovery: Database error for PBJV Group Sdn Bhd: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:38:32,046 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.barakahpetroleum.com/
+2025-06-03 16:38:34,855 [INFO] mosva_vessel_discovery: 🚢 Found 1 vessel pages
+2025-06-03 16:38:35,759 [INFO] mosva_vessel_discovery: 📊 Extracted 1 vessels from http://www.barakahpetroleum.com/marine
+2025-06-03 16:38:35,870 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels "HTTP/2 400 Bad Request"
+2025-06-03 16:38:35,871 [ERROR] mosva_vessel_discovery: Database error for Year: {'message': "Could not find the 'build_year' column of 'vessels' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2025-06-03 16:38:35,871 [INFO] mosva_vessel_discovery: ✅ Processed vessel: Year
+2025-06-03 16:38:35,871 [INFO] mosva_vessel_discovery: 🏢 Processing: Perdana Petroleum Berhad
+2025-06-03 16:38:35,975 [INFO] httpx: HTTP Request: POST https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies "HTTP/2 404 Not Found"
+2025-06-03 16:38:35,975 [ERROR] mosva_vessel_discovery: Database error for Perdana Petroleum Berhad: {'message': 'JSON could not be generated', 'code': 404, 'hint': 'Refer to full message for details', 'details': "b'{}'"}
+2025-06-03 16:38:40,732 [INFO] mosva_vessel_discovery: 🌐 Website found: http://www.perdana.my/
+2025-06-03 16:38:44,705 [INFO] mosva_vessel_discovery: 🚢 Found 8 vessel pages
+2025-06-03 16:38:46,786 [INFO] mosva_vessel_discovery: 📊 Extracted 3 vessels from https://perdana.my/services/
