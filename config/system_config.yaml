@@ -1,0 +1,17 @@
+crawler:
+  enable_media_collection: true
+  enable_specification_parsing: true
+  max_photos_per_vessel: 5
+  max_workers: 4
+  rate_limit_delay: 1.5
+dashboard:
+  auto_refresh_interval: 30
+  host: 0.0.0.0
+  port: 8000
+database:
+  supabase_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp1dnFxcnNkYnJ1c2tsZW9kemlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxNzYyOTUsImV4cCI6MjA1OTc1MjI5NX0.lEP07y-D7S70hpd-Ob62v4VyDx9ZyaaLN7yUK-3tvIw
+  supabase_url: https://juvqqrsdbruskleodzip.supabase.co
+system:
+  environment: production
+  name: Integrated OSV Discovery System
+  version: 2.0.0
