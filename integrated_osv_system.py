@@ -310,9 +310,13 @@ class IntegratedOSVSystem:
             vessels_result = self.components['database'].client.table('vessels').select('id').execute()
             self.system_status.total_vessels = len(vessels_result.data) if vessels_result.data else 0
             
-            # Get company count
-            companies_result = self.components['database'].client.table('companies').select('id').execute()
-            self.system_status.total_companies = len(companies_result.data) if companies_result.data else 0
+            # Get company count (handle missing table gracefully)
+            try:
+                companies_result = self.components['database'].client.table('companies').select('id').execute()
+                self.system_status.total_companies = len(companies_result.data) if companies_result.data else 0
+            except Exception:
+                # Companies table might not exist yet
+                self.system_status.total_companies = 0
             
             # Update uptime
             uptime = datetime.utcnow() - self.start_time
