@@ -519,6 +519,18 @@ class MarketplaceIntegrationManager:
         self.marketplace_sync = MarketplaceSync(supabase_url, supabase_key)
         self.logger = logging.getLogger(__name__)
     
+    async def initialize(self) -> bool:
+        """Initialize the marketplace integration manager"""
+        try:
+            self.logger.info("🔧 Initializing marketplace integration manager...")
+            # Test database connection
+            stats = await self.marketplace_sync.get_marketplace_stats()
+            self.logger.info("✅ Marketplace integration manager initialized")
+            return True
+        except Exception as e:
+            self.logger.error(f"❌ Failed to initialize marketplace manager: {e}")
+            return False
+    
     async def full_integration_cycle(self) -> Dict[str, Any]:
         """Run complete integration cycle from crawler data to marketplace"""
         self.logger.info("🚀 Starting marketplace integration cycle")
