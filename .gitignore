@@ -1,0 +1,40 @@
+# Carikapal OSV Discovery System
+# Production deployment files
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+integrated_system.log
+
+# Cache files
+*_cache/
+*.cache
+reliable_sources_cache.json
+
+# Test files
+dashboard.html
+production_test.log
+
+# Media and data
+vessel_media/
+osv_data/
+
+# IDE
+.vscode/
+.idea/
+
+# MacOS
+.DS_Store
+
+# Supervisor logs (local development)
+/var/log/supervisor/
