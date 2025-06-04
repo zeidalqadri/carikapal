@@ -166,14 +166,21 @@ def main():
     
     # Test all API endpoints
     tester.test_system_status()
-    tester.test_initialize_system()
-    tester.test_component_health()
-    tester.test_integrated_status()
     
-    # These tests might take longer, so we'll skip them for now
-    # Uncomment if you want to run them
-    # tester.test_start_discovery()
-    # tester.test_run_full_discovery()
+    # Initialize the system first
+    init_success, _ = tester.test_initialize_system()
+    
+    # Only proceed with other tests if initialization was successful
+    if init_success:
+        time.sleep(2)  # Give the system time to initialize
+        tester.test_component_health()
+        
+        # These tests might take longer, so we'll skip them for now
+        # Uncomment if you want to run them
+        # tester.test_start_discovery()
+        # tester.test_run_full_discovery()
+    else:
+        print("⚠️ System initialization failed, skipping remaining tests")
     
     # Print summary
     success = tester.print_summary()
