@@ -1,0 +1,49 @@
+2025-06-04 06:50:40,082 [INFO] integrated_osv_system: 🚀 Integrated OSV System Starting...
+/app/enhanced_cli_dashboard.py:985: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @dashboard.app.on_event("startup")
+🖥️  Starting Enhanced CLI-Style OSV Discovery Dashboard...
+📟 Integrated terminal interface available at: http://localhost:8000
+INFO:     Started server process [546]
+INFO:     Waiting for application startup.
+🚀 Enhanced OSV CLI Dashboard starting up...
+✅ Enhanced dashboard ready at http://localhost:8000
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57946 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57956 - "GET /api/system-status HTTP/1.1" 200 OK
+2025-06-04 06:51:03,663 [INFO] integrated_osv_system: 🔧 Initializing all system components...
+2025-06-04 06:51:03,664 [INFO] integrated_osv_system: 📊 Initializing database manager...
+2025-06-04 06:51:04,022 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels?select=id&limit=1 "HTTP/2 200 OK"
+2025-06-04 06:51:04,025 [INFO] sckr.mosva_vessel_discovery: ✅ Supabase connection established
+2025-06-04 06:51:04,026 [INFO] integrated_osv_system: 🚢 Initializing vessel discovery system...
+2025-06-04 06:51:04,026 [INFO] sckr.complete_osv_system: 🚀 OSV Discovery System initialized - Log: /app/logs/osv_discovery_20250604_065104.log
+2025-06-04 06:51:04,026 [INFO] sckr.complete_osv_system: 🔧 Initializing system components...
+2025-06-04 06:51:04,236 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels?select=id&limit=1 "HTTP/2 200 OK"
+2025-06-04 06:51:04,237 [INFO] mosva_vessel_discovery: ✅ Supabase connection established
+2025-06-04 06:51:04,237 [INFO] sckr.complete_osv_system: ✅ Supabase connected
+2025-06-04 06:51:04,237 [ERROR] sckr.complete_osv_system: ❌ System initialization failed: asdict() should be called on dataclass instances
+2025-06-04 06:51:04,237 [INFO] integrated_osv_system: 📸 Initializing media collector...
+2025-06-04 06:51:04,238 [INFO] integrated_osv_system: 🔍 Initializing IMO search engine...
+2025-06-04 06:51:04,238 [INFO] integrated_osv_system: 🏪 Initializing marketplace integration...
+2025-06-04 06:51:04,271 [INFO] sckr.marketplace_integration: 🔧 Initializing marketplace integration manager...
+2025-06-04 06:51:04,522 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels?select=id%2Cdata_quality_score%2Cavailability_status "HTTP/2 400 Bad Request"
+2025-06-04 06:51:04,523 [ERROR] sckr.marketplace_integration: Failed to get marketplace stats: {'message': 'column vessels.data_quality_score does not exist', 'code': '42703', 'hint': None, 'details': None}
+2025-06-04 06:51:04,523 [INFO] sckr.marketplace_integration: ✅ Marketplace integration manager initialized
+2025-06-04 06:51:04,523 [INFO] integrated_osv_system: 📊 Initializing real-time dashboard...
+✅ Supabase connected to dashboard
+2025-06-04 06:51:04,561 [INFO] integrated_osv_system: 📄 Initializing specification parser...
+2025-06-04 06:51:04,561 [INFO] integrated_osv_system: ✅ All system components initialized successfully
+INFO:     127.0.0.1:50960 - "POST /api/initialize-system HTTP/1.1" 200 OK
+2025-06-04 06:51:09,530 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels?select=id "HTTP/2 200 OK"
+2025-06-04 06:51:09,665 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/companies?select=id "HTTP/2 404 Not Found"
+INFO:     127.0.0.1:50964 - "GET /api/system-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55628 - "GET /api/component-health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [546]
