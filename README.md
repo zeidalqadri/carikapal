@@ -1,36 +1,27 @@
-# Integrated OSV Discovery System v2.0
+# 🚢 Carikapal OSV Discovery System v2.0
 
 ## 🌊 Overview
-Complete integrated vessel discovery and tracking system for Malaysian maritime industry, specifically focused on MOSVA (Malaysian Offshore Vessel Association) members.
+**Carikapal** is a comprehensive integrated vessel discovery and tracking system for the Malaysian maritime industry, specifically focused on MOSVA (Malaysian Offshore Vessel Association) members.
 
-## 🚀 Quick Start
+## 🚀 Live Production System
+**Dashboard Access:** [Your Railway URL will be here after deployment]
 
-### Option 1: Enhanced CLI Dashboard
+## 🖥️ Local Development
+
+### Quick Start
 ```bash
-# Windows
-start_enhanced_dashboard.bat
+# Install dependencies
+pip install -r requirements.txt
 
-# Linux/Mac
-./start_enhanced_dashboard.sh
-
-# Or directly with Python
-python enhanced_cli_dashboard.py
+# Start production server
+python production_server.py
 ```
 
-### Option 2: Full Integrated System
-```bash
-# Windows
-start_integrated_system.bat
-
-# Linux/Mac  
-./start_integrated_system.sh
-
-# Or directly with Python
-python integrated_osv_system.py full-system
-```
-
-### Dashboard Access
+### Local Dashboard Access
 Open your browser and go to: **http://localhost:8000**
+
+## ☁️ Railway Deployment
+See [RAILWAY_DEPLOYMENT.md](RAILWAY_DEPLOYMENT.md) for complete deployment instructions.
 
 ## 🔧 System Components
 
