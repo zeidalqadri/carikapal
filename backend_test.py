@@ -18,6 +18,7 @@ class OSVSystemTester:
         self.tests_run = 0
         self.tests_passed = 0
         self.test_results = []
+        print(f"🌐 Testing OSV Discovery System at: {self.base_url}")
         
     def run_test(self, name, method, endpoint, expected_status=200, data=None, check_json=True):
         """Run a single API test"""
