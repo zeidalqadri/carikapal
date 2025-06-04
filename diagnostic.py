@@ -1,89 +1,78 @@
 #!/usr/bin/env python3
 """
-Diagnostic version to identify Railway startup issues
+Railway-specific diagnostic version
 """
 
 import os
 import sys
 import logging
-import time
+import signal
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, PlainTextResponse
 import uvicorn
 
-# Configure detailed logging
+# Force immediate output
+sys.stdout.reconfigure(line_buffering=True)
+sys.stderr.reconfigure(line_buffering=True)
+
+# Setup logging
 logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    force=True
 )
 logger = logging.getLogger(__name__)
 
-# Log startup sequence
-logger.info("=" * 50)
-logger.info("🚢 CARIKAPAL DIAGNOSTIC STARTUP")
-logger.info("=" * 50)
+logger.info("🚂 RAILWAY DIAGNOSTIC STARTING")
+logger.info(f"Python: {sys.version}")
+logger.info(f"PORT env: {os.environ.get('PORT', 'NOT_SET')}")
 
-# Log environment
-logger.info(f"Python version: {sys.version}")
-logger.info(f"Working directory: {os.getcwd()}")
-logger.info(f"PORT env var: {os.environ.get('PORT', 'NOT SET')}")
-logger.info(f"All env vars: {list(os.environ.keys())}")
-
-# Create minimal FastAPI app
-logger.info("Creating FastAPI app...")
-app = FastAPI(title="Carikapal Diagnostic")
+# Create app
+app = FastAPI(title="Railway Diagnostic", docs_url=None, redoc_url=None)
 
 @app.get("/")
 async def root():
-    logger.info("Root endpoint called")
-    return {"message": "Carikapal Diagnostic Online", "status": "ok"}
+    return PlainTextResponse("Railway Diagnostic Online - Carikapal OSV System")
 
 @app.get("/health")
 async def health():
-    logger.info("Health endpoint called")
-    return {"status": "healthy", "diagnostic": "working"}
+    return {"status": "healthy"}
 
-@app.get("/debug")
-async def debug():
-    logger.info("Debug endpoint called")
-    return {
-        "port": os.environ.get('PORT', 'not_set'),
-        "host": "0.0.0.0",
-        "python": sys.version,
-        "cwd": os.getcwd(),
-        "env_count": len(os.environ)
-    }
+@app.get("/healthz")  # Kubernetes-style health check
+async def healthz():
+    return PlainTextResponse("OK")
+
+@app.get("/ping")
+async def ping():
+    return PlainTextResponse("pong")
+
+def signal_handler(signum, frame):
+    logger.info(f"Received signal {signum}")
+    sys.exit(0)
 
 def main():
+    # Setup signal handlers
+    signal.signal(signal.SIGTERM, signal_handler)
+    signal.signal(signal.SIGINT, signal_handler)
+    
+    # Get port - Railway provides this
+    port = int(os.environ.get("PORT", 8000))
+    
+    logger.info(f"Starting on 0.0.0.0:{port}")
+    
     try:
-        # Get port from environment
-        port = int(os.environ.get("PORT", 8000))
-        host = "0.0.0.0"
-        
-        logger.info(f"Attempting to start server on {host}:{port}")
-        
-        # Log before startup
-        logger.info("About to call uvicorn.run...")
-        
-        # Start server with minimal config
         uvicorn.run(
             app,
-            host=host,
+            host="0.0.0.0",
             port=port,
-            log_level="debug",
-            access_log=True,
-            timeout_keep_alive=30,
-            timeout_graceful_shutdown=10
+            log_level="info",
+            access_log=False,  # Reduce logging
+            timeout_keep_alive=5,
+            timeout_graceful_shutdown=5
         )
-        
     except Exception as e:
-        logger.error(f"STARTUP FAILED: {e}")
-        logger.error(f"Exception type: {type(e)}")
-        import traceback
-        logger.error(f"Traceback: {traceback.format_exc()}")
+        logger.error(f"Server failed: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":
-    logger.info("Script started, calling main()...")
     main()
-    logger.info("main() returned (this shouldn't happen)")
