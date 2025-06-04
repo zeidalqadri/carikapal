@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 """
-Main entry point for Carikapal OSV Discovery System
-Railway deployment - simplified version for reliability
+Diagnostic entry point
 """
 
-from simple_main import main
+import logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+logger.info("🔍 Starting diagnostic version...")
+
+from diagnostic import main
 
 if __name__ == "__main__":
     main()
