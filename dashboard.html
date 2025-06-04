@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced OSV Discovery System - CLI Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+            color: #00ff41;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+            border-right: 1px solid #00ff41;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(90deg, #000000 0%, #1a4d1a 100%);
+            padding: 15px;
+            border: 1px solid #00ff41;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .ascii-art {
+            font-size: 10px;
+            line-height: 1;
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+        
+        .system-title {
+            font-size: 18px;
+            color: #00ff88;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff88;
+        }
+        
+        .control-panel {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid #00ff41;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .control-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #003300 0%, #006600 100%);
+            border: 1px solid #00ff41;
+            color: #00ff41;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #006600 0%, #00aa00 100%);
+            box-shadow: 0 0 10px #00ff41;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .terminal {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ff41;
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        .log-entry {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .log-timestamp {
+            color: #666;
+            font-size: 11px;
+            min-width: 80px;
+        }
+        
+        .log-level-INFO { color: #00ff41; }
+        .log-level-SUCCESS { color: #00ff88; }
+        .log-level-WARNING { color: #ffaa00; }
+        .log-level-ERROR { color: #ff4444; }
+        
+        .component-status {
+            margin-bottom: 15px;
+        }
+        
+        .component-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid #003300;
+            margin-bottom: 5px;
+        }
+        
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #666;
+        }
+        
+        .status-operational { background: #00ff88; }
+        .status-error { background: #ff4444; }
+        .status-loading { background: #ffaa00; }
+        
+        .progress-container {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid #00ff41;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .progress-bar {
+            background: #333;
+            height: 20px;
+            border: 1px solid #00ff41;
+            position: relative;
+            margin: 5px 0;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #006600 0%, #00aa00 100%);
+            height: 100%;
+            transition: width 0.3s ease;
+            position: relative;
+        }
+        
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 11px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid #00ff41;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ff88;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: #999;
+        }
+        
+        .connection-status {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ff41;
+            padding: 5px 10px;
+            font-size: 11px;
+        }
+        
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff4444;
+            margin-right: 5px;
+        }
+        
+        .status-connected { background: #00ff88; }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #00ff41;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="connection-status">
+        <span class="status-dot" id="connection-dot"></span>
+        <span id="connection-text">Connecting...</span>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="component-status">
+                <h3 style="margin-bottom: 10px; color: #00aaff;">System Components</h3>
+                <div class="component-item">
+                    <span>Database</span>
+                    <span class="status-indicator" id="database-status"></span>
+                </div>
+                <div class="component-item">
+                    <span>Vessel Discovery</span>
+                    <span class="status-indicator" id="discovery-status"></span>
+                </div>
+                <div class="component-item">
+                    <span>Media Collector</span>
+                    <span class="status-indicator" id="media-status"></span>
+                </div>
+                <div class="component-item">
+                    <span>IMO Search</span>
+                    <span class="status-indicator" id="imo-status"></span>
+                </div>
+                <div class="component-item">
+                    <span>Marketplace</span>
+                    <span class="status-indicator" id="marketplace-status"></span>
+                </div>
+                <div class="component-item">
+                    <span>Dashboard</span>
+                    <span class="status-indicator" id="dashboard-status"></span>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="vessels-count">0</div>
+                    <div class="stat-label">Vessels</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="companies-count">0</div>
+                    <div class="stat-label">Companies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="uptime">0s</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <div class="ascii-art">
+  ███████╗███╗   ██╗██╗  ██╗ █████╗ ███╗   ██╗ ██████╗███████╗██████╗ 
+  ██╔════╝████╗  ██║██║  ██║██╔══██╗████╗  ██║██╔════╝██╔════╝██╔══██╗
+  █████╗  ██╔██╗ ██║███████║███████║██╔██╗ ██║██║     █████╗  ██║  ██║
+  ██╔══╝  ██║╚██╗██║██╔══██║██╔══██║██║╚██╗██║██║     ██╔══╝  ██║  ██║
+  ███████╗██║ ╚████║██║  ██║██║  ██║██║ ╚████║╚██████╗███████╗██████╔╝
+  ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═════╝ 
+                </div>
+                <div class="system-title">ENHANCED OSV DISCOVERY SYSTEM v2.0</div>
+                <div style="font-size: 12px; color: #666;">Integrated Maritime Intelligence Platform</div>
+            </div>
+            
+            <div class="control-panel">
+                <h3 style="margin-bottom: 10px; color: #00aaff;">System Control</h3>
+                <div class="control-buttons">
+                    <button class="btn" id="init-btn" onclick="initializeSystem()">🔧 Initialize System</button>
+                    <button class="btn" id="discovery-btn" onclick="startComprehensiveDiscovery()" disabled>🚀 Start Full Discovery</button>
+                    <button class="btn" onclick="checkComponentHealth()">💊 Component Health</button>
+                    <button class="btn" onclick="getSystemStatus()">📊 System Status</button>
+                    <button class="btn" onclick="clearTerminal()">🧹 Clear Terminal</button>
+                </div>
+            </div>
+            
+            <div class="progress-container" id="progress-container">
+                <h3 style="margin-bottom: 10px; color: #00aaff;">Active Operations</h3>
+                <div style="text-align: center; color: #666; font-size: 11px;">No active operations</div>
+            </div>
+            
+            <div class="terminal" id="terminal">
+                <div class="log-entry">
+                    <span class="log-timestamp">[SYSTEM]</span>
+                    <span class="log-level-INFO">Enhanced OSV Discovery System CLI Dashboard v2.0 initialized</span>
+                </div>
+                <div class="log-entry">
+                    <span class="log-timestamp">[READY]</span>
+                    <span class="log-level-SUCCESS">All systems ready - Click 'Initialize System' to begin</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ws = null;
+        let systemInitialized = false;
+        let discoveryRunning = false;
+        
+        function connectWebSocket() {
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsUrl = `${protocol}//${window.location.host}/ws`;
+            
+            ws = new WebSocket(wsUrl);
+            
+            ws.onopen = function(event) {
+                updateConnectionStatus(true);
+                addLogEntry('WebSocket connected to enhanced dashboard', 'SUCCESS');
+                
+                // Keep connection alive
+                setInterval(() => {
+                    if (ws.readyState === WebSocket.OPEN) {
+                        ws.send(JSON.stringify({type: 'ping'}));
+                    }
+                }, 30000);
+            };
+            
+            ws.onmessage = function(event) {
+                const message = JSON.parse(event.data);
+                handleWebSocketMessage(message);
+            };
+            
+            ws.onclose = function(event) {
+                updateConnectionStatus(false);
+                setTimeout(connectWebSocket, 5000);
+            };
+        }
+        
+        function updateConnectionStatus(connected) {
+            const dot = document.getElementById('connection-dot');
+            const text = document.getElementById('connection-text');
+            
+            if (connected) {
+                dot.className = 'status-dot status-connected';
+                text.textContent = 'Connected';
+            } else {
+                dot.className = 'status-dot';
+                text.textContent = 'Disconnected';
+            }
+        }
+        
+        function handleWebSocketMessage(message) {
+            switch(message.type) {
+                case 'terminal:connect':
+                case 'system:init':
+                case 'system:ready':
+                case 'system:error':
+                case 'discovery:start':
+                case 'discovery:complete':
+                case 'discovery:error':
+                case 'discovery:results':
+                    addLogEntry(message.message, message.level || 'INFO');
+                    break;
+                    
+                case 'component:status':
+                    updateComponentStatus(message.component, message.status);
+                    break;
+                    
+                case 'discovery:progress':
+                    updateDiscoveryProgress(message);
+                    break;
+            }
+        }
+        
+        function addLogEntry(message, level = 'INFO') {
+            const terminal = document.getElementById('terminal');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            
+            const timestamp = new Date().toLocaleTimeString();
+            entry.innerHTML = `
+                <span class="log-timestamp">[${timestamp}]</span>
+                <span class="log-level-${level}">${message}</span>
+            `;
+            
+            terminal.appendChild(entry);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+        
+        function updateComponentStatus(component, status) {
+            const statusElement = document.getElementById(`${component.toLowerCase()}-status`);
+            if (statusElement) {
+                statusElement.className = `status-indicator status-${status}`;
+            }
+        }
+        
+        function updateDiscoveryProgress(message) {
+            const container = document.getElementById('progress-container');
+            let progressBar = document.getElementById(`progress-${message.phase}`);
+            
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.id = `progress-${message.phase}`;
+                progressBar.innerHTML = `
+                    <div style="color: #00aaff; font-size: 11px; margin-bottom: 4px;">${message.phase} - ${message.operation}</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${message.percentage}%"></div>
+                        <div class="progress-text">${message.current}/${message.total} (${message.percentage.toFixed(1)}%)</div>
+                    </div>
+                    <div style="color: #999; font-size: 10px; margin-top: 2px; margin-bottom: 10px;">${message.details}</div>
+                `;
+                
+                // Clear "no active operations" message
+                const noOps = container.querySelector('div[style*="No active operations"]');
+                if (noOps) {
+                    container.removeChild(noOps);
+                }
+                
+                container.appendChild(progressBar);
+            } else {
+                const progressFill = progressBar.querySelector('.progress-fill');
+                const progressText = progressBar.querySelector('.progress-text');
+                const detailsText = progressBar.querySelector('div[style*="color: #999"]');
+                
+                progressFill.style.width = `${message.percentage}%`;
+                progressText.textContent = `${message.current}/${message.total} (${message.percentage.toFixed(1)}%)`;
+                if (detailsText) {
+                    detailsText.textContent = message.details;
+                }
+            }
+            
+            // Remove completed progress bars
+            if (message.percentage >= 100) {
+                setTimeout(() => {
+                    if (progressBar && progressBar.parentNode) {
+                        progressBar.parentNode.removeChild(progressBar);
+                        
+                        if (container.children.length === 1) { // Only header left
+                            container.innerHTML = `
+                                <h3 style="margin-bottom: 10px; color: #00aaff;">Active Operations</h3>
+                                <div style="text-align: center; color: #666; font-size: 11px;">No active operations</div>
+                            `;
+                        }
+                    }
+                }, 3000);
+            }
+        }
+        
+        async function initializeSystem() {
+            const btn = document.getElementById('init-btn');
+            btn.disabled = true;
+            btn.textContent = '🔄 Initializing...';
+            
+            try {
+                const response = await fetch('/api/initialize-system', { method: 'POST' });
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    systemInitialized = true;
+                    document.getElementById('discovery-btn').disabled = false;
+                    btn.textContent = '✅ Initialized';
+                    addLogEntry('System initialization completed successfully', 'SUCCESS');
+                } else {
+                    btn.disabled = false;
+                    btn.textContent = '🔧 Initialize System';
+                    addLogEntry(`Initialization failed: ${result.message}`, 'ERROR');
+                }
+            } catch (error) {
+                btn.disabled = false;
+                btn.textContent = '🔧 Initialize System';
+                addLogEntry(`Initialization error: ${error.message}`, 'ERROR');
+            }
+        }
+        
+        async function startComprehensiveDiscovery() {
+            if (!systemInitialized || discoveryRunning) return;
+            
+            const btn = document.getElementById('discovery-btn');
+            btn.disabled = true;
+            btn.textContent = '🔄 Running...';
+            discoveryRunning = true;
+            
+            try {
+                const response = await fetch('/api/start-comprehensive-discovery', { method: 'POST' });
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    addLogEntry('Comprehensive discovery completed successfully', 'SUCCESS');
+                } else {
+                    addLogEntry(`Discovery failed: ${result.message}`, 'ERROR');
+                }
+            } catch (error) {
+                addLogEntry(`Discovery error: ${error.message}`, 'ERROR');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🚀 Start Full Discovery';
+                discoveryRunning = false;
+            }
+        }
+        
+        async function checkComponentHealth() {
+            try {
+                const response = await fetch('/api/component-health');
+                const result = await response.json();
+                
+                addLogEntry('Component health check:', 'INFO');
+                
+                if (result.components) {
+                    for (const [name, health] of Object.entries(result.components)) {
+                        const status = health.status === 'operational' ? 'SUCCESS' : 'ERROR';
+                        addLogEntry(`  ${name}: ${health.status}`, status);
+                    }
+                }
+            } catch (error) {
+                addLogEntry(`Health check failed: ${error.message}`, 'ERROR');
+            }
+        }
+        
+        async function getSystemStatus() {
+            try {
+                const response = await fetch('/api/system-status');
+                const result = await response.json();
+                
+                if (result.status === 'not_initialized') {
+                    addLogEntry('System not yet initialized', 'WARNING');
+                } else {
+                    addLogEntry('System status:', 'INFO');
+                    addLogEntry(`  Vessels: ${result.total_vessels}`, 'INFO');
+                    addLogEntry(`  Companies: ${result.total_companies}`, 'INFO');
+                    addLogEntry(`  Database: ${result.database_status}`, 'INFO');
+                    addLogEntry(`  Health: ${result.system_health}`, 'INFO');
+                    addLogEntry(`  Uptime: ${result.uptime}`, 'INFO');
+                    
+                    // Update sidebar stats
+                    document.getElementById('vessels-count').textContent = result.total_vessels;
+                    document.getElementById('companies-count').textContent = result.total_companies;
+                    document.getElementById('uptime').textContent = result.uptime;
+                }
+            } catch (error) {
+                addLogEntry(`Status check failed: ${error.message}`, 'ERROR');
+            }
+        }
+        
+        function clearTerminal() {
+            const terminal = document.getElementById('terminal');
+            terminal.innerHTML = `
+                <div class="log-entry">
+                    <span class="log-timestamp">[CLEARED]</span>
+                    <span class="log-level-INFO">Terminal cleared by user</span>
+                </div>
+            `;
+        }
+        
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            connectWebSocket();
+            
+            // Auto-refresh system status
+            setInterval(() => {
+                if (systemInitialized) {
+                    getSystemStatus();
+                }
+            }, 30000);
+        });
+    </script>
+</body>
+</html>
+        
