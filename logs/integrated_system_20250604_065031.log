@@ -1,0 +1,3 @@
+2025-06-04 06:50:31,151 [INFO] integrated_osv_system: 🚀 Integrated OSV System Starting...
+2025-06-04 06:50:31,544 [INFO] httpx: HTTP Request: GET https://juvqqrsdbruskleodzip.supabase.co/rest/v1/vessels?select=id&limit=1 "HTTP/2 200 OK"
+2025-06-04 06:50:31,548 [INFO] sckr.mosva_vessel_discovery: ✅ Supabase connection established
